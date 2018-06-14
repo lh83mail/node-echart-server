@@ -26,4 +26,4 @@ RUN cd /server && npm install
 
 EXPOSE 80
 
-CMD ["/usr/bin/node /server/index.js"]
+CMD ["/usr/bin/node","/server/index.js"]
