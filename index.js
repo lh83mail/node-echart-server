@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const generate = require('./g-echart');
 
 
-let port = 8123;
+let port = 80;
 
 const server=express();
 server.use(bodyParser.json());
@@ -19,7 +19,6 @@ server.post('/echarts', (req, res) =>  {
     try {
     res.status(200);
     res.header('Content-Type','image/png');
-    throw new Error("GOODDD");
     res.send(generate(req.body));
  
     } catch(e) {
