@@ -1,4 +1,4 @@
-FROM 192.168.1.115/ubuntu:16.04
+FROM ubuntu:16.04
 MAINTAINER lh83mail
 
 ADD ./source.list /etc/apt/sources.list
