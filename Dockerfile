@@ -22,11 +22,10 @@ RUN \
 
 RUN \
   apt-get install -y bash python2.7 nodejs python-dev python-pip python-virtualenv npm curl && \
-  ln -s /usr/bin/nodejs /usr/bin/node && \
-  npm install --global smart-npm --registry=https://registry.npm.taobao.org/
+  ln -s /usr/bin/nodejs /usr/bin/node
 
 ADD . /server/ 
-RUN cd /server && smart-npm install
+RUN cd /server && npm install --registry=https://registry.npm.taobao.org/
 
 EXPOSE 80
 
