@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 MAINTAINER lh83mail
 
-ADD ./source.list /etc/apt/sources.list
+# ADD ./source.list /etc/apt/sources.list
 
 RUN \
   apt-get update && \
@@ -22,7 +22,7 @@ RUN \
   ln -s /usr/bin/nodejs /usr/bin/node
 
 ADD . /server/ 
-RUN cd /server && npm install --registry=https://registry.npm.taobao.org/
+RUN cd /server && npm install 
 
 EXPOSE 80
 
