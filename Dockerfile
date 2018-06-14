@@ -4,6 +4,7 @@ MAINTAINER lh83mail
 ADD ./source.list /etc/apt/sources.list
 
 RUN \
+  apt-get update && \
   apt-get install locales && \
   locale-gen zh_CN.UTF-8 && \
   DEBIAN_FRONTEND=noninteractive dpkg-reconfigure locales && \
