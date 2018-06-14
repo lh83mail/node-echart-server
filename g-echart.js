@@ -1,3 +1,5 @@
+'use strict';
+
 var echarts = require("echarts");
 var Canvas = require("canvas-prebuilt");
 var fs     = require('fs');
