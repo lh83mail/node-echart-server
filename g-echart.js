@@ -4,14 +4,16 @@ var echarts = require("echarts");
 var Canvas = require("canvas-prebuilt");
 var fs     = require('fs');
 var path   = require('path');
+var Font = Canvas.Font;
 
-// console.log(path.join(__dirname, "fonts/simkai.ttf"))
-// console.log(">>>", Canvas.prototype)
-// Canvas.registerFont(path.join(__dirname, "fonts/simsunb.ttf"), { family: "宋体"});
-// Canvas.registerFont(path.join(__dirname, "fonts/simkai.ttf"), { family: "楷体"});
-// Canvas.registerFont(path.join(__dirname, "fonts/simhei.ttf"), { family: "黑体"});
-// Canvas.registerFont(path.join(__dirname, "fonts/yahei_mono.ttf"), { family: "微软雅黑"});
-//new Font(path.join(__dirname, "fonts/simkai.ttf"),"楷体");
+
+new Font("宋体", path.join(__dirname, "fonts/simsunb.ttf"));
+new Font("黑体", path.join(__dirname, "fonts/simhei.ttf"));
+new Font("微软雅黑", path.join(__dirname, "fonts/yahei_mono.ttf"));
+new Font("楷体", path.join(__dirname, "fonts/simkai.ttf"));
+
+
+
 /**
  * @param config = {
         width: 500 // Image width, type is number.
@@ -25,8 +27,7 @@ module.exports = (config) => {
     }
     echarts.setCanvasCreator(function () {
         return ctx;
-    });
-    var ctx = new Canvas(128, 128);
+    }); var ctx = new Canvas(128, 128);
     var chart,option = {
             title: {
                 text: 'test'
@@ -51,7 +52,6 @@ module.exports = (config) => {
     if(config.font){
         ctx.font = config.font;
     }
-    
     
     config.option.animation = false;
     chart = echarts.init(new Canvas(parseInt(config.width,10), parseInt(config.height,10)));
